@@ -1187,7 +1187,7 @@ Example:
   }
 ```
 
-### Purcase and Download a Claims Register Entry PDF
+### Purchase and Download a Claims Register Entry PDF
 
 Endpoint: `GET /cases/pacer/{court}/{case}/claims/{claim_no}/documents/{document_no}`
 
