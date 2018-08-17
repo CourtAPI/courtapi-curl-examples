@@ -30,7 +30,7 @@ The following scripts demonstrate this functionality:
 
 ### Save PACER Credentials
 
-Usage: `save-pacer-credentials.sh <pacer username> <pacer password>`
+Usage: `save-pacer-credentials.sh <PACER username> <PACER password>`
 
 Endpoint: `POST /pacer/credentials`
 
@@ -127,7 +127,7 @@ Example:
   }
 ```
 
-### Show a specific Court
+### Show a Specific Court
 
 Usage `show-court.sh <court code>`
 
@@ -797,7 +797,7 @@ endpoint
 
 From this response, we have everything needed to save the PDF locally.  Note
 that we received a receipt from PACER in the response indicating the
-passthrough charge amount. We can fetch the PDF at the `part.download_url`
+pass through charge amount. We can fetch the PDF at the `part.download_url`
 location, and use the `part.filename` or `part.friendly_name` to save it
 locally.  The `GET` endpoint now will return the same information:
 
@@ -881,7 +881,7 @@ Example:
 
 We can see that `entries.content` is empty, so we need to use the
 `links.pacer-update` endpoint to purchase the claims register from PACER.
-`update-case-claims.sh` will make this request for us (PACER passthrough
+`update-case-claims.sh` will make this request for us (PACER pass through
 charges apply)
 
 ```shell
@@ -1211,7 +1211,7 @@ Example:
   }
 ```
 
-There are no parts present, so we need to update the documents from pacer by
+There are no parts present, so we need to update the documents from PACER by
 using the `links.pacer-update` endpoint.  `update-case-claim-document.sh` will
 make this request for us (it takes the same args as
 `show-case-claim-document.sh`).
@@ -1336,7 +1336,7 @@ Example:
 At this point, you can fetch the PDF from the `part.download_url` location, and
 save it at the location of your choice, or, use the `part.filename` or
 `part.friendly_name` suggested filenames.  Note that we have a `receipt` for
-the PACER passthrough charges.
+the PACER pass through charges.
 
 We can re-fetch the PDF endpoint using the `GET` method for no charge:
 
