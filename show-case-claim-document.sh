@@ -16,7 +16,7 @@ document_no="$4"
 # {
 #   "links": {
 #     "pacer-update": {
-#       "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+#       "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
 #       "method": "POST"
 #     }
 #   },
@@ -27,7 +27,7 @@ document_no="$4"
 # {
 #   "links": {
 #     "pacer-update": {
-#       "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+#       "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
 #       "method": "POST"
 #     }
 #   },
@@ -41,7 +41,7 @@ document_no="$4"
 #       "friendly_name": null,
 #       "links": {
 #         "order_pdf": {
-#           "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+#           "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
 #         }
 #       },
 #       "number": 1,

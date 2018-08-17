@@ -108,7 +108,7 @@ Example:
         "code": "akbtest",
         "links": {
           "self": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/courts/pacer/akbtest"
+            "href": "https://train.v1.courtapi.com/courts/pacer/akbtest"
           }
         },
         "name": "Alaska TEST Bankruptcy Court"
@@ -117,7 +117,7 @@ Example:
         "code": "akbtrain",
         "links": {
           "self": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/courts/pacer/akbtrain"
+            "href": "https://train.v1.courtapi.com/courts/pacer/akbtrain"
           }
         },
         "name": "Alaska TRAIN Bankruptcy Court"
@@ -144,10 +144,10 @@ Example:
     "citation": "Bankr.D.Ariz.TEST",
     "links": {
       "cases_report_bk": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/courts/pacer/azbtest/cases/report/bankruptcy"
+        "href": "https://train.v1.courtapi.com/courts/pacer/azbtest/cases/report/bankruptcy"
       },
       "cases_search": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/courts/pacer/azbtest/cases/search"
+        "href": "https://train.v1.courtapi.com/courts/pacer/azbtest/cases/search"
       }
     },
     "name": "Arizona TEST Bankruptcy Court",
@@ -189,10 +189,10 @@ Example:
         "lead_bk_case_title": null,
         "links": {
           "dockets": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets"
+            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets"
           },
           "self": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618"
+            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
           }
         },
         "timestamp": 1533058495.07583,
@@ -279,7 +279,7 @@ Show a case that has been imported from PACER:
     },
     "links": {
       "self": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618"
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
       }
     }
   }
@@ -307,7 +307,7 @@ This means we need to update the docket entries from PACER, using the
       "content": [],
       "links": {
         "self": {
-          "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=10&page_number=1"
+          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=10&page_number=1"
         }
       },
       "page_size": 10,
@@ -320,14 +320,14 @@ This means we need to update the docket entries from PACER, using the
     },
     "links": {
       "header": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
       }
     }
   }
@@ -556,10 +556,10 @@ link to this specific docket entry, respectively.
           "docket_uri": 85055152,
           "links": {
             "documents": {
-              "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
+              "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
             },
             "self": {
-              "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+              "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
             }
           },
           "timestamp": 1533059097.61991
@@ -567,7 +567,7 @@ link to this specific docket entry, respectively.
       ],
       "links": {
         "self": {
-          "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=10&page_number=1"
+          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=10&page_number=1"
         }
       },
       "page_size": 10,
@@ -580,14 +580,14 @@ link to this specific docket entry, respectively.
     },
     "links": {
       "header": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
       }
     }
   }
@@ -619,24 +619,24 @@ Example:
       "docket_uri": 85055152,
       "links": {
         "documents": {
-          "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
+          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
         },
         "self": {
-          "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
         }
       },
       "timestamp": 1533059097.61991
     },
     "links": {
       "header": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
       }
     }
   }
@@ -659,7 +659,7 @@ Example:
   {
     "links": {
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
         "method": "POST"
       }
     },
@@ -676,7 +676,7 @@ any documents.
   {
     "links": {
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
         "method": "POST"
       }
     },
@@ -690,7 +690,7 @@ any documents.
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
           }
         },
         "number": 1,
@@ -707,7 +707,7 @@ And now we can show the documents again:
   {
     "links": {
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
         "method": "POST"
       }
     },
@@ -721,7 +721,7 @@ And now we can show the documents again:
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
           }
         },
         "number": 1,
@@ -857,7 +857,7 @@ Example:
       "content": [],
       "links": {
         "self": {
-          "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=10&page_number=1"
+          "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=10&page_number=1"
         }
       },
       "page_size": 10,
@@ -866,14 +866,14 @@ Example:
     },
     "links": {
       "header": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/header"
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
       },
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/update",
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims"
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims"
       }
     }
   }
@@ -1071,7 +1071,7 @@ Now we can re-run the `GET` request to show the claims register:
               "detail_uri": null,
               "links": {
                 "documents": {
-                  "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
+                  "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
                 }
               }
             }
@@ -1084,7 +1084,7 @@ Now we can re-run the `GET` request to show the claims register:
           },
           "links": {
             "self": {
-              "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1"
+              "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
             }
           },
           "remarks": null,
@@ -1093,7 +1093,7 @@ Now we can re-run the `GET` request to show the claims register:
       ],
       "links": {
         "self": {
-          "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=10&page_number=1"
+          "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=10&page_number=1"
         }
       },
       "page_size": 10,
@@ -1102,14 +1102,14 @@ Now we can re-run the `GET` request to show the claims register:
     },
     "links": {
       "header": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/header"
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
       },
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/update",
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims"
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims"
       }
     }
   }
@@ -1157,7 +1157,7 @@ Example:
           "detail_uri": null,
           "links": {
             "documents": {
-              "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
+              "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
             }
           }
         }
@@ -1170,7 +1170,7 @@ Example:
       },
       "links": {
         "self": {
-          "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1"
+          "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
         }
       },
       "remarks": null,
@@ -1178,10 +1178,10 @@ Example:
     },
     "links": {
       "header": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/header"
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
       },
       "self": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1"
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
       }
     }
   }
@@ -1203,7 +1203,7 @@ Example:
   {
     "links": {
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
         "method": "POST"
       }
     },
@@ -1221,7 +1221,7 @@ make this request for us (it takes the same args as
   {
     "links": {
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
         "method": "POST"
       }
     },
@@ -1235,7 +1235,7 @@ make this request for us (it takes the same args as
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+            "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
           }
         },
         "number": 1,
@@ -1252,7 +1252,7 @@ And now we can show the claims document again by using the `GET` method:
   {
     "links": {
       "pacer-update": {
-        "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
         "method": "POST"
       }
     },
@@ -1266,7 +1266,7 @@ And now we can show the claims document again by using the `GET` method:
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "http://courtapi.inforuptcy.dev.azk.io/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+            "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
           }
         },
         "number": 1,
