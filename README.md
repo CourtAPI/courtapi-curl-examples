@@ -208,10 +208,17 @@ Example:
 
 Endpoint: `GET /cases/pacer/{court}/{case}`
 
-For this example, you need a court code (e.g. `orbtrain`) and a case number
-(e.g.: `6:14-bk-63618`). 
-
 This uses the CourtAPI endpoint `GET /cases/pacer/{court}/{case}`
+
+For this example, you need a court code (e.g. `orbtrain`) and a case number
+(e.g.: `6:14-bk-63618`).
+
+For all CourtAPI endpoints that use a case number in the URL, long format case
+numbers must be used.  That is, case numbers must be in the format
+`o:yy-tp-nnnnn` where `o` is a single digit representing the office where the
+case was filed, `yy` is the 2 digit year when the case was filed, `tp` is the
+case type (up to 2 characters), and `nnnnn` is the case number (up to 5
+digits).
 
 Show a case that has not been imported from PACER yet:
 
