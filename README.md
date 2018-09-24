@@ -17,7 +17,7 @@ your CourtAPI `APP_ID` and `SECRET`.
  $ export COURTAPI_SECRET="your-secret"
 ```
 
-For local examples, using `courtapi.courtio.dev.azk.io`, you can use
+For local examples, using `train.v1.courtapi.com`, you can use
 anything for these.  For the training or live sites, you must use your real
 values.  The default is to use the local dev environment.
 
@@ -107,7 +107,7 @@ Example:
         "code": "akbtest",
         "links": {
           "self": {
-            "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/akbtest"
+            "href": "http://train.v1.courtapi.com/courts/pacer/akbtest"
           }
         },
         "name": "Alaska TEST Bankruptcy Court"
@@ -116,7 +116,7 @@ Example:
         "code": "akbtrain",
         "links": {
           "self": {
-            "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/akbtrain"
+            "href": "http://train.v1.courtapi.com/courts/pacer/akbtrain"
           }
         },
         "name": "Alaska TRAIN Bankruptcy Court"
@@ -143,10 +143,10 @@ Example:
     "citation": "Bankr.D.Ariz.TEST",
     "links": {
       "cases_report_bk": {
-        "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/azbtest/cases/report/bankruptcy"
+        "href": "http://train.v1.courtapi.com/courts/pacer/azbtest/cases/report/bankruptcy"
       },
       "cases_search": {
-        "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/azbtest/cases/search"
+        "href": "http://train.v1.courtapi.com/courts/pacer/azbtest/cases/search"
       }
     },
     "name": "Arizona TEST Bankruptcy Court",
@@ -188,10 +188,10 @@ Example:
         "lead_bk_case_title": null,
         "links": {
           "dockets": {
-            "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets"
+            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets"
           },
           "self": {
-            "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618"
+            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
           }
         },
         "timestamp": "2018-09-24T17:37:18.440870Z",
@@ -267,11 +267,11 @@ Show a case that has been imported from PACER:
     },
     "links": {
       "pacer-update": {
-        "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618",
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618",
         "method": "POST"
       },
       "self": {
-        "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618"
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
       }
     },
     "menu": {}
@@ -284,7 +284,7 @@ Next, we will use the curl examples to purchase and display the docket sheet.
 
 ### Show Docket Entries
 
-Usage: `show-case-docket.sh <court code> <case number>`
+Usage: `./docket/list.sh <court code> <case number>`
 
 Endpoint: `GET /cases/pacer/{court}/{case}/dockets`
 
@@ -294,33 +294,40 @@ This means we need to update the docket entries from PACER, using the
 `pacer-update` link that is provided in the response.
 
 ```shell
-  $ show-case-docket.sh orbtrain 6:14-bk-63618 | jq
+  $ ./docket/list.sh orbtrain 6:14-bk-63618 | jq
   {
     "entries": {
       "content": [],
       "links": {
         "self": {
-          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=10&page_number=1"
+          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=500&page_number=1"
         }
       },
-      "page_size": 10,
+      "page_size": 500,
       "total_items": 0,
       "total_pages": 1
     },
     "header": {
+      "attorneys": [],
+      "header_html_timestamp": null,
       "html": null,
-      "timestamp": null
+      "is_header_html_valid": null,
+      "latest_docket_number": null,
+      "latest_history_number": null,
+      "latest_known_date_filed": null,
+      "modified": null,
+      "trustees": []
     },
     "links": {
       "header": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
       }
     }
   }
@@ -328,7 +335,7 @@ This means we need to update the docket entries from PACER, using the
 
 ### Purchase Docket Entries
 
-Usage `buy-case-docket-sheet.sh <court code> <case number>`
+Usage `./docket/update.sh <court code> <case number>`
 
 Endpoint: `POST /cases/pacer/{court}/{case}/dockets`
 
@@ -336,7 +343,7 @@ This uses the `POST /cases/pacer/{court}/{case}/dockets/update` endpoint to
 update the docket entries for a case.  The response is quite long and detailed.
 
 ```shell
-  $ buy-case-docket-sheet.sh orbtrain 6:14-bk-6361 | jq
+  $ ./docket/update.sh orbtrain 6:14-bk-6361 | jq
   {
     "case": {
       "appeal_case_uuid": null,
@@ -344,20 +351,18 @@ update the docket entries for a case.  The response is quite long and detailed.
       "assigned_to": " ",
       "case_chapter_id": 1,
       "case_court_id": 221,
-      "case_id": 5083526,
       "case_id_external": 458895,
       "case_no": "6:14-bk-63618",
       "case_petition_id": 1,
       "case_title": "Joseph Wayne Sample and Sarah Lynn Sample",
       "case_type_id": 1,
-      "case_uuid": "orbtrain_458895",
       "cause": null,
       "ch11_type": null,
       "ch11_type_code": null,
       "chapter": 7,
       "court": "orbtrain",
       "court_name": "orbtrain",
-      "created": "2018-07-31 17:34:55.075826+00",
+      "created": "2018-09-24T17:37:18.440872Z",
       "date_closed": null,
       "date_discharged": null,
       "date_filed": "10/15/2014",
@@ -367,160 +372,175 @@ update the docket entries for a case.  The response is quite long and detailed.
       "disabled": 0,
       "disposition": null,
       "has_asset": 0,
-      "industry": null,
       "is_business_bankruptcy": 0,
       "judge_name": null,
       "jurisdiction": null,
       "jury_demand": null,
       "lead_case_uuid": null,
-      "liabilities": "Unknown",
-      "modified": "2018-07-31 17:44:57.600539+00",
-      "naics_code": null,
+      "links": {
+        "self": {
+          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-6361"
+        }
+      },
+      "modified": "2018-09-24T17:47:48.121075Z",
       "nature_of_debt": null,
       "nature_of_suit_code": null,
       "ncl_parties": [],
       "referred_to": null,
       "schedule_ab": null,
-      "timestamp": 1533059097.60054,
+      "timestamp": "2018-09-24T17:47:48.121070Z",
       "title": "Joseph Wayne Sample and Sarah Lynn Sample",
-      "uri_id": 85055151,
-      "website": null
+      "uri_id": 85055150
     },
-    "forms": {
-      "case_code": "6-14-bk-63618",
-      "date_from": null,
-      "date_to": null,
-      "date_type": "filed",
-      "doc_from": null,
-      "doc_to": null,
-      "show_terminated": 1
-    },
-    "items": {
-      "docket_headers": [
-        {
-          "meta": {
-            "case_uuid": "orbtrain_458895",
-            "filename": "<filename_is_ignored>",
-            "timestamp": 1533059096.13301
-          },
-          "text": "... [docket header html] ..."
-        }
-      ],
-      "dockets": [
-        {
-          "case_uuid": "orbtrain_458895",
-          "date_filed": "10/15/2014",
-          "docket_no": "1",
-          "docket_seq": 0,
-          "docket_text": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)",
-          "docket_uri": "https://ecf-train.orb.uscourts.gov/doc3/150014371924",
-          "filename": "orbtrain_458895_1_0",
-          "timestamp": 1533059096.13301,
-          "title": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)"
-        }
-      ],
-      "headers": [
-        {
-          "meta": {
-            "case_uuid": "orbtrain_458895",
-            "filename": "orbtrain_458895",
-            "timestamp": 1533059096.13301
-          },
-          "text": {
-            "case_code": null,
-            "case_title": null,
-            "case_type": null,
-            "case_uuid": "orbtrain_458895",
-            "chapter": null,
-            "has_asset": null,
-            "title": null
-          }
-        },
-        {
-          "meta": {
-            "case_uuid": "orbtrain_458895",
-            "filename": "orbtrain_458895",
-            "timestamp": 1533059096.13301
-          },
-          "text": {
-            "assigned_to": " ",
-            "case_uuid": "orbtrain_458895",
-            "chapter": "7",
-            "date_filed": "10/15/2014",
-            "has_asset": 1,
-            "voluntary": 1
-          }
-        }
-      ],
-      "receipts": [
-        {
-          "meta": {
-            "case_uuid": "orbtrain_458895",
-            "filename": "70d0b69a-94e9-11e8-98ae-f7223abbf895",
-            "timestamp": 1533059096.13301
-          },
-          "text": {
-            "client_code": "",
-            "cost": "0.10",
-            "criteria": "14-63618-7 Fil or Ent: filed Doc From: 0 Doc To: 99999999 Term: included Links : included Format: html Page counts for documents: included",
-            "datetime": "07/31/2018 10:44:57",
-            "description": "Docket Report",
-            "pages": "1",
-            "user_id": "irtraining"
-          }
-        }
-      ]
-    },
-    "queries": {
-      "docket_headers": [
-        {
-          "meta": {
-            "case_uuid": "orbtrain_458895",
-            "filename": "orbtrain_458895_11b8fd7c9d5249ba5b64af8cb52f8459",
-            "timestamp": 1533059096.13301
-          },
-          "text": {
-            "attorneys": [
-              {
-                "associated": [
-                  {
-                    "address": "PO Box 123\nPortland, OR 97204\nMULTNOMAH-OR",
-                    "name": "Joseph Wayne Sample",
-                    "role": "Debtor"
-                  }
-                ],
-                "attorney": {
-                  "address": "630 Lincoln St\nEugene, OR 97401\nFax : OBO 1/27/2014",
-                  "name": "CHARLES H. VINCENT",
-                  "phone": "541-687-6765"
-                }
-              },
-              {
-                "associated": [
-                  {
-                    "address": "PO Box 123\nPortland, OR 97204\nMULTNOMAH-OR\nfka Sarah Lynn Smith",
-                    "name": "Sarah Lynn Sample",
-                    "role": "Joint Debtor",
-                    "ssn": "xxx-xx-1298"
-                  }
-                ],
-                "attorney": {
-                  "address": "630 Lincoln St\nEugene, OR 97401\nFax : OBO 1/27/2014",
-                  "name": "CHARLES H. VINCENT"
-                }
-              }
-            ],
-            "trustees": []
-          }
-        }
-      ]
+    "dockets": [
+      {
+        "annotations": [],
+        "date_filed": "10/15/2014",
+        "docket_no": 1,
+        "docket_seq": 0,
+        "docket_text": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)",
+        "has_pdf_link_on_pacer": true,
+        "sequence_number": "1.00000",
+        "timestamp": "2018-09-24T17:47:46.594939Z",
+        "title": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)"
+      }
+    ],
+    "receipts": {
+      "client_code": "",
+      "cost": "0.10",
+      "criteria": "14-63618-7 Fil or Ent: filed Doc From: 0 Doc To: 99999999 Term: included Format: html Page counts for documents: included",
+      "datetime": "09/24/2018 10:47:47",
+      "description": "Docket Report",
+      "pages": "1",
+      "timestamp": "2018-09-24T17:47:46.594939Z",
+      "user_id": "irtraining"
     }
   }
 ```
 
+There are many options that could be passed to the docket update endpoint.  One
+very useful option for this example would be to request all of the document
+information to be included in the response.  This does make the request a bit
+slower as a lot more information is needed from PACER, but it does allow you to
+fetch everything you need to get to the "buy a PDF" step in one call. To do
+this, you pass `include_documents` as a form parameter to the docket update
+call:
+
+Example:
+
+```shell
+  $ ./docket/update.sh orbtrain 6:14-bk-6361 1
+  {
+    "case": {
+      "appeal_case_uuid": null,
+      "assets": "Unknown",
+      "assigned_to": " ",
+      "case_chapter_id": 1,
+      "case_court_id": 221,
+      "case_id_external": 458895,
+      "case_no": "6:14-bk-63618",
+      "case_petition_id": 1,
+      "case_title": "Joseph Wayne Sample and Sarah Lynn Sample",
+      "case_type_id": 1,
+      "cause": null,
+      "ch11_type": null,
+      "ch11_type_code": null,
+      "chapter": 7,
+      "court": "orbtrain",
+      "court_name": "orbtrain",
+      "created": "2018-09-24T17:37:18.440872Z",
+      "date_closed": null,
+      "date_discharged": null,
+      "date_filed": "10/15/2014",
+      "date_of_last_filing": null,
+      "date_plan_confirmed": null,
+      "date_terminated": null,
+      "disabled": 0,
+      "disposition": null,
+      "has_asset": 0,
+      "is_business_bankruptcy": 0,
+      "judge_name": null,
+      "jurisdiction": null,
+      "jury_demand": null,
+      "lead_case_uuid": null,
+      "links": {
+        "self": {
+          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
+        }
+      },
+      "modified": "2018-09-24T17:58:47.477298Z",
+      "nature_of_debt": null,
+      "nature_of_suit_code": null,
+      "ncl_parties": [],
+      "referred_to": null,
+      "schedule_ab": null,
+      "timestamp": "2018-09-24T17:58:47.477300Z",
+      "title": "Joseph Wayne Sample and Sarah Lynn Sample",
+      "uri_id": 85055150
+    },
+    "dockets": [
+      {
+        "annotations": [],
+        "binder": {
+          "documents": [
+            {
+              "cost": "0.70",
+              "description_html": null,
+              "docket_no": 1,
+              "filename": null,
+              "free": null,
+              "friendly_name": null,
+              "links": {
+                "order_pdf": {
+                  "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+                }
+              },
+              "number": 1,
+              "pages": 7
+            }
+          ],
+          "links": {
+            "pacer-update": {
+              "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+              "method": "POST"
+            }
+          }
+        },
+        "date_filed": "10/15/2014",
+        "docket_no": 1,
+        "docket_seq": 0,
+        "docket_text": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)",
+        "has_pdf_link_on_pacer": true,
+        "sequence_number": "1.00000",
+        "timestamp": "2018-09-24T17:58:46.158385Z",
+        "title": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)"
+      }
+    ],
+    "receipts": {
+      "client_code": "",
+      "cost": "0.10",
+      "criteria": "14-63618-7 Fil or Ent: filed Doc From: 0 Doc To: 99999999 Term: included Format: html Page counts for documents: included",
+      "datetime": "09/24/2018 10:58:47",
+      "description": "Docket Report",
+      "pages": "1",
+      "timestamp": "2018-09-24T17:58:46.158385Z",
+      "user_id": "irtraining"
+    }
+  }
+```
+
+Note that the docket entry now has a `binder` field, and that field contains all the information needed to go straight to the "Order PDF" step.  That is:
+
+* There is a PDF available
+* It has 7 pages
+* The cost to buy this PDF from PACER is $0.70.
+* The Endpoint to purchase the PDF is: `/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1`
+
 ### Display Docket Entries
 
 Endpoint: `GET /cases/pacer/{court}/{case}/dockets`
+
+This shows the docket entries from the local CourtAPI database.
 
 Now that the docket entries have been update from PACER, we can show the docket
 entries again, and this time the `entries` in the response will contain the
@@ -529,115 +549,297 @@ docket entries.
 Note that the `response.entries.content` is a paged result set, and if the
 `total_pages` is greater than 1, then you will need to call this endpoint
 repeatedly, using the `entries.content.links.next.href` location to fetch all
-of the docket entries.  You could also use a larger `page_size` query parameter
-to fetch more docket entries in the same request.  For each docket entry, the
-`documents` and `self` links refer to the endpoints to get the documents or the
-link to this specific docket entry, respectively.
+of the docket entries. The default page size is 500, so this will only be
+necessary for cases with very large docket sheets.  You could also use a larger
+`page_size` query parameter to fetch more docket entries in the same request.
+For each docket entry, the `documents` and `self` links refer to the endpoints
+to get the documents or the link to this specific docket entry, respectively.
 
 ```shell
-  $ show-case-docket.sh orbtrain 6:14-bk-63618 | jq
+  $ ./docket/list.sh orbtrain 6:14-bk-63618 | jq
   {
     "entries": {
       "content": [
         {
           "annotations": [],
-          "case_uuid": "orbtrain_458895",
+          "binder": {
+            "documents": [
+              {
+                "cost": "0.70",
+                "description_html": null,
+                "docket_no": 1,
+                "filename": null,
+                "free": null,
+                "friendly_name": null,
+                "links": {
+                  "order_pdf": {
+                    "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+                  }
+                },
+                "number": 1,
+                "pages": 7
+              }
+            ],
+            "links": {
+              "pacer-update": {
+                "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+                "method": "POST"
+              }
+            }
+          },
           "date_filed": "10/15/2014",
           "docket_no": 1,
           "docket_seq": "1.00000",
           "docket_text": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)",
-          "docket_uri": 85055152,
+          "has_pdf_link_on_pacer": true,
           "links": {
             "documents": {
-              "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
+              "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
             },
             "self": {
-              "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+              "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
             }
           },
-          "timestamp": 1533059097.61991
+          "timestamp": "2018-09-24T17:47:48.147230Z"
         }
       ],
       "links": {
         "self": {
-          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=10&page_number=1"
+          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=500&page_number=1"
         }
       },
-      "page_size": 10,
+      "page_size": 500,
       "total_items": 1,
       "total_pages": 1
     },
     "header": {
-      "html": "... [ docket header html ] ...",
-      "timestamp": 1533059097.60054
+      "assigned_to": " ",
+      "attorneys": [
+        {
+          "associated": [
+            {
+              "address": "PO Box 123\nPortland, OR 97204\nMULTNOMAH-OR",
+              "name": "Joseph Wayne Sample",
+              "role": "Debtor"
+            }
+          ],
+          "attorney": {
+            "address": "630 Lincoln St\nEugene, OR 97401\nFax : OBO 1/27/2014",
+            "name": "CHARLES H. VINCENT",
+            "phone": "541-687-6765"
+          }
+        },
+        {
+          "associated": [
+            {
+              "address": "PO Box 123\nPortland, OR 97204\nMULTNOMAH-OR\nfka Sarah Lynn Smith",
+              "name": "Sarah Lynn Sample",
+              "role": "Joint Debtor",
+              "ssn": "xxx-xx-1298"
+            }
+          ],
+          "attorney": {
+            "address": "630 Lincoln St\nEugene, OR 97401\nFax : OBO 1/27/2014",
+            "name": "CHARLES H. VINCENT"
+          }
+        }
+      ],
+      "chapter": "7",
+      "date_filed": "10/15/2014",
+      "has_asset": 0,
+      "header_html_timestamp": "2018-09-24T18:06:41Z",
+      "html": "... header html ...",
+      "is_header_html_valid": 1,
+      "latest_docket_number": 1,
+      "latest_history_number": null,
+      "latest_known_date_filed": "10/15/2014",
+      "modified": "2018-09-24T18:06:41.769860Z",
+      "trustees": [],
+      "voluntary": 1
     },
     "links": {
       "header": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
       }
     }
   }
 ```
 
+Note here again, that the `binder` for each docket entry has everything that
+you need to jump straight to the "Buy PDF" step.  There is no need to show
+individual docket entries if you just want to jump straight to the PDF.
+
 ### Show a Specific Docket Entry
 
-Usage `show-docket-entry.sh <court code> <case number> <docket number>`
+Usage `./docket/show-entry.sh <court code> <case number> <docket number>`
 
 Endpoint: `GET /cases/pacer/{court}/{case}/dockets/{docket_no}`
 
-This just shows a single specific docket entry.  It is the `self` url from an
+This just shows a single specific docket entry.  It is the `self` URL from an
 entry in the list of docket entries.
 
 Example:
 
 ```shell
-  $ show-docket-entry.sh orbtrain 6:14-bk-63618 1.00000 | jq
+  $ ./docket/show-entry.sh orbtrain 6:14-bk-63618 1.00000 | jq
   {
     "entry": {
       "action": "https://ecf-train.orb.uscourts.gov/doc3/150014371924",
       "annotations": [],
+      "binder": {
+        "documents": [
+          {
+            "cost": "0.70",
+            "description_html": null,
+            "docket_no": 1,
+            "filename": null,
+            "free": null,
+            "friendly_name": null,
+            "links": {
+              "order_pdf": {
+                "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+              }
+            },
+            "number": 1,
+            "pages": 7
+          }
+        ],
+        "links": {
+          "pacer-update": {
+            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+            "method": "POST"
+          }
+        }
+      },
       "case_docket_entry_id": 81274893,
-      "case_uuid": "orbtrain_458895",
       "date_filed": "10/15/2014",
       "docket_no": 1,
       "docket_seq": "1.00000",
       "docket_text": "Chapter 7 Voluntary Petition, Fee Amount &#036;335 CHARLES H. VINCENT on behalf of Joseph Wayne Sample, Sarah Lynn Sample. (VINCENT, CHARLES) (Entered: 10/15/2014)",
-      "docket_uri": 85055152,
+      "has_pdf_link_on_pacer": true,
       "links": {
         "documents": {
-          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
+          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
         },
         "self": {
-          "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
         }
       },
-      "timestamp": 1533059097.61991
+      "timestamp": "2018-09-24T17:47:48.147230Z"
     },
     "links": {
       "header": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
       }
+    }
+  }
+```
+
+## Show Docket Header
+
+Usage: `./docket/show-header.sh <court code> <case number>`
+
+Endpoint `GET /cases/pacer/{court}/{case}/dockets/header`
+
+This endpoint shows the docket header information.
+
+Example:
+
+```shell
+  $ ./docket/show-header.sh orbtrain 6:14-bk-63618  | jq
+  {
+    "case": {
+      "assets": "Unknown",
+      "assigned_to": " ",
+      "case_category": "bankruptcy",
+      "case_no": "6:14-bk-63618",
+      "case_title": "Joseph Wayne Sample and Sarah Lynn Sample",
+      "case_type": "bk",
+      "cause": null,
+      "ch11_type": null,
+      "chapter": 7,
+      "court_code": "orbtrain",
+      "date_closed": null,
+      "date_discharged": null,
+      "date_filed": "10/15/2014",
+      "date_of_last_filing": null,
+      "date_terminated": null,
+      "disposition": null,
+      "has_asset": "No",
+      "judge_name": null,
+      "jurisdiction": null,
+      "jury_demand": null,
+      "modified": "2018-09-24T21:02:59.027680Z",
+      "nature_of_suit_code": null,
+      "petition_type": "v",
+      "plan_confirmed": null,
+      "referred_to": null
+    },
+    "header": {
+      "assigned_to": " ",
+      "attorneys": [
+        {
+          "associated": [
+            {
+              "address": "PO Box 123\nPortland, OR 97204\nMULTNOMAH-OR",
+              "name": "Joseph Wayne Sample",
+              "role": "Debtor"
+            }
+          ],
+          "attorney": {
+            "address": "630 Lincoln St\nEugene, OR 97401\nFax : OBO 1/27/2014",
+            "name": "CHARLES H. VINCENT",
+            "phone": "541-687-6765"
+          }
+        },
+        {
+          "associated": [
+            {
+              "address": "PO Box 123\nPortland, OR 97204\nMULTNOMAH-OR\nfka Sarah Lynn Smith",
+              "name": "Sarah Lynn Sample",
+              "role": "Joint Debtor",
+              "ssn": "xxx-xx-1298"
+            }
+          ],
+          "attorney": {
+            "address": "630 Lincoln St\nEugene, OR 97401\nFax : OBO 1/27/2014",
+            "name": "CHARLES H. VINCENT"
+          }
+        }
+      ],
+      "chapter": "7",
+      "date_filed": "10/15/2014",
+      "has_asset": 0,
+      "header_html_timestamp": "2018-09-24T21:02:59Z",
+      "html": "... header HTML ... ",
+      "is_header_html_valid": 1,
+      "latest_docket_number": 1,
+      "latest_history_number": null,
+      "latest_known_date_filed": "10/15/2014",
+      "modified": "2018-09-24T21:02:59.027680Z",
+      "trustees": [],
+      "voluntary": 1
     }
   }
 ```
 
 ## Get Documents for a Docket Entry
 
-Usage: `show-docket-entry-documents.sh <court code> <case number> <docket seq>`
+Usage: `./docket/show-entry-documents.sh <court code> <case number> <docket seq>`
 
 Endpoint: `GET /cases/pacer/{court}/{case}/dockets/{docket_no}/documents`
 
@@ -648,34 +850,30 @@ is in the previous response at the `entry.links.documents.href` location.
 Example:
 
 ```shell
-  $ show-docket-entry-documents.sh orbtrain 6:14-bk-63618 1.00000 | jq
+  $ ./docket/show-entry-documents.sh orbtrain 6:14-bk-63618 1.00000 | jq
   {
+    "documents": [],
     "links": {
       "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
         "method": "POST"
       }
-    },
-    "parts": []
+    }
   }
 ```
 
-There are no entries available, so we need to do a POST to the `pacer-update`
-link to get the list of documents.  Note that some docket entries will not have
-any documents.
+There are no entries available (`documents` is empty), so we need to do a POST
+to the `pacer-update` link to get the list of documents.  Note that some docket
+entries will not have any documents.  Also note that document information is
+automatically imported by CourtAPI when the docket entry is updated from PACER.
+This happens in the background.
 
 ```shell
-  $ update-docket-entry-documents.sh orbtrain 6:14-bk-63618 1.00000 | jq
+  $ ./docket/update-entry-documents.sh orbtrain 6:14-bk-63618 1.00000 | jq~_
   {
-    "links": {
-      "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
-        "method": "POST"
-      }
-    },
-    "parts": [
+    "documents": [
       {
-        "cost": null,
+        "cost": "0.70",
         "description_html": null,
         "docket_no": 1,
         "filename": null,
@@ -683,30 +881,30 @@ any documents.
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
           }
         },
         "number": 1,
         "pages": 7
       }
-    ]
+    ],
+    "links": {
+      "pacer-update": {
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "method": "POST"
+      }
+    }
   }
 ```
 
 And now we can show the documents again:
 
 ```shell
-  $ show-docket-entry-documents.sh orbtrain 6:14-bk-63618 1.00000 | jq
+  $ ./docket/show-entry-documents.sh orbtrain 6:14-bk-63618 1.00000 | jq
   {
-    "links": {
-      "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
-        "method": "POST"
-      }
-    },
-    "parts": [
+    "documents": [
       {
-        "cost": null,
+        "cost": "0.70",
         "description_html": null,
         "docket_no": 1,
         "filename": null,
@@ -714,100 +912,119 @@ And now we can show the documents again:
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
           }
         },
         "number": 1,
         "pages": 7
       }
-    ]
+    ],
+    "links": {
+      "pacer-update": {
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "method": "POST"
+      }
+    }
   }
 ```
 
 The next step is to follow the `order_pdf` link.  The `show-docket-entry-pdf.sh` script will do that for us:
 
-Usage: `show-docket-entry-pdf.sh <court code> <case number> <docket seq> <document part>`
+Usage: `./docket/show-entry-pdf.sh <court code> <case number> <docket seq> <document part>`
 
 Endpoint: `GET /cases/pacer/{court}/{case}/dockets/{docket_no}/documents/{part}`
 
 Example:
 ```shell
-  $ show-docket-entry-pdf.sh orbtrain 6:14-bk-63618 1.00000 1 | jq
+  $ ./docket/show-entry-pdf.sh orbtrain 6:14-bk-63618 1.00000 1 | jq
   {
-    "message": null,
-    "origin": "cache",
-    "part": {},
-    "status": "success"
+    "document": {},
+    "links": {
+      "pacer-update": {
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
+        "method": "POST"
+      }
+    },
+    "origin": "cache"
   }
 ```
 
-Because the `part` is empty, we need to POST to the document part URL to
+Because the `document` is empty, we need to POST to the document part URL to
 purchase the document from PACER.
 
-The `update-docket-entry-pdf.sh` script will do this. It uses the CourtAPI
+The `docket/update-entry-pdf.sh` script will do this. It uses the CourtAPI
 endpoint
 `POST /cases/pacer/{court}/{case}/dockets/{docket_no}/documents/{part}` to do this.
 
 ```shell
-  $ update-docket-entry-pdf.sh orbtrain 6:14-bk-63618 1.00000 1 | jq
+  $ ./docket/update-entry-pdf.sh orbtrain 6:14-bk-63618 1.00000 1 | jq
   {
-    "origin": "PACER",
-    "part": {
+    "document": {
       "action": "https://ecf-train.orb.uscourts.gov/doc3/150114371924?caseid=458895",
-      "case_uuid": "orbtrain_458895",
-      "cost": null,
+      "cost": "0.70000",
       "description_html": null,
       "docket_no": "1.00000",
-      "download_url": "http://aws-s3.inforuptcy.dev.azk.io:32799/inforuptcy-storage/pacer/orbtrain/458895/dockets/1.00000/1-EC7FCFDA-94EC-11E8-98AE-F7223ABBF895?response-content-disposition=attachment%3B+filename%3DBankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf&AWSAccessKeyId=courtapi_dummy_key&Expires=1848679793&Signature=MQHl%2FVbQo8gjQ4fwos0eM97y13w%3D",
+      "download_url": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/documents/docket/download/eyJjYXNlX3V1aWQiO...",
       "filename": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
       "free": null,
       "friendly_name": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
       "number": 1,
-      "ocr_link": "http://aws-s3.inforuptcy.dev.azk.io:32799/inforuptcy-storage/pacer-ocr/pacer/orbtrain/458895/dockets/1.00000/1-EC7FCFDA-94EC-11E8-98AE-F7223ABBF895.txt?response-content-disposition=attachment%3B+filename%3DBankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf.txt&AWSAccessKeyId=courtapi_dummy_key&Expires=1848679793&Signature=o18SEoXK0AUdiryGkR%2BJay4hCK0%3D",
+      "ocr_link": "/cases/pacer/orbtrain/6:14-bk-63618/documents/docket/download/eyJjYXNlX3V1...",
       "pages": 7,
-      "raw_location": "s3://inforuptcy-storage/pacer/orbtrain/458895/dockets/1.00000/1-EC7FCFDA-94EC-11E8-98AE-F7223ABBF895",
       "sequence_number": "1.00000"
     },
+    "links": {
+      "pacer-update": {
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
+        "method": "POST"
+      }
+    },
+    "origin": "PACER",
     "receipt": {
       "meta": {
         "case_uuid": null,
-        "filename": "eb800604-94ec-11e8-98ae-f7223abbf895",
         "timestamp": null
       },
       "text": {
         "client_code": "",
         "cost": "0.70",
         "criteria": "14-63618-7",
-        "datetime": "Tue Jul 31 11:09:51 2018",
+        "datetime": "Mon Sep 24 14:12:58 2018",
         "description": "Image:1-0",
         "pages": "7",
         "user_id": "irtraining"
       }
-    },
-    "status": "success"
+    }
   }
 ````
-
 From this response, we have everything needed to save the PDF locally.  Note
 that we received a receipt from PACER in the response indicating the
 pass through charge amount. We can fetch the PDF at the `part.download_url`
 location, and use the `part.filename` or `part.friendly_name` to save it
-locally.  The `GET` endpoint now will return the same information:
+locally.  Note that the fetch PDF link is a local link to CourtAPI, and will
+return a 302 redirect to the actual location of the PDF file.
+
+The `GET` endpoint now will return the same information:
 
 ```shell
-  $ show-docket-entry-pdf.sh orbtrain 6:14-bk-63618 1.00000 1 | jq
+  $ ./docket/show-entry-pdf.sh orbtrain 6:14-bk-63618 1.00000 1 | jq
   {
-    "origin": "cache",
-    "part": {
-      "cost": null,
+    "document": {
+      "cost": "0.70000",
       "description_html": null,
-      "download_url": "http://aws-s3.inforuptcy.dev.azk.io:32799/inforuptcy-storage/pacer/orbtrain/458895/dockets/1.00000/1-EC7FCFDA-94EC-11E8-98AE-F7223ABBF895?response-content-disposition=attachment%3B+filename%3DBankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf&AWSAccessKeyId=courtapi_dummy_key&Expires=1848680027&Signature=sr264y47QN7qbCckWTrS4kfiOmc%3D",
+      "download_url": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/documents/docket/download/eyJjYXNlX3V...",
       "filename": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
       "friendly_name": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
       "number": 1,
       "pages": 7
     },
-    "status": "success"
+    "links": {
+      "pacer-update": {
+        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
+        "method": "POST"
+      }
+    },
+    "origin": "cache"
   }
 ```
 

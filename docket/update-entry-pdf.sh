@@ -8,7 +8,7 @@ if [ $# -ne 4 ]; then
   exit 1
 fi
 
-. $(dirname $0)/config.sh
+. $(dirname $0)/../config.sh
 
 court="$1"
 case="$2"

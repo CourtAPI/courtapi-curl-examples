@@ -5,10 +5,10 @@ if [ $# -ne 3 ]; then
   exit 1
 fi
 
-. $(dirname $0)/config.sh
+. $(dirname $0)/../config.sh
 
 court="$1"
 case="$2"
 docket_no="$3"
 
-curl -s -XPOST $COURTAPI_BASE_URL/cases/pacer/$court/$case/dockets/$docket_no/documents
+curl -s -XGET $COURTAPI_BASE_URL/cases/pacer/$court/$case/dockets/$docket_no
