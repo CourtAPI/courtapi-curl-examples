@@ -9,7 +9,7 @@ if [ -z "$COURTAPI_SECRET" ]; then
 fi
 
 if [ -z "$COURTAPI_HOST" ]; then
-  COURTAPI_HOST="courtapi.inforuptcy.dev.azk.io"
+  COURTAPI_HOST="courtapi.courtio.dev.azk.io"
 fi
 
 if [ -z "$COURTAPI_SCHEME" ]; then
