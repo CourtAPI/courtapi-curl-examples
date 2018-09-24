@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $(dirname $0)/config.sh
+. $(dirname $0)/../config.sh
 
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <court id>"

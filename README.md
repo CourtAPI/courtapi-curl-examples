@@ -81,7 +81,7 @@ Example:
 
 ### Search for a Court
 
-Usage `search-courts.sh`
+Usage `./court/search.sh`
 
 Endpoint: `GET /courts/pacer`
 
@@ -100,14 +100,14 @@ E.g.: `GET /courts/pacer?type=appellate`
 Example:
 
 ```shell
-  $ search_courts.sh | jq
+  $ ./court/search.sh | jq
   {
     "courts": [
       {
         "code": "akbtest",
         "links": {
           "self": {
-            "href": "https://train.v1.courtapi.com/courts/pacer/akbtest"
+            "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/akbtest"
           }
         },
         "name": "Alaska TEST Bankruptcy Court"
@@ -116,7 +116,7 @@ Example:
         "code": "akbtrain",
         "links": {
           "self": {
-            "href": "https://train.v1.courtapi.com/courts/pacer/akbtrain"
+            "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/akbtrain"
           }
         },
         "name": "Alaska TRAIN Bankruptcy Court"
@@ -128,7 +128,7 @@ Example:
 
 ### Show a Specific Court
 
-Usage `show-court.sh <court code>`
+Usage `./court/show.sh <court code>`
 
 Endpoint: `GET /courts/pacer/{court}`
 
@@ -137,16 +137,16 @@ This script / endpoint displays details about a specific court.
 Example:
 
 ```shell
-  $ show-court.sh azbtest | jq
+  $ ./court/show.sh azbtest | jq
   {
     "abbr": "azbtest",
     "citation": "Bankr.D.Ariz.TEST",
     "links": {
       "cases_report_bk": {
-        "href": "https://train.v1.courtapi.com/courts/pacer/azbtest/cases/report/bankruptcy"
+        "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/azbtest/cases/report/bankruptcy"
       },
       "cases_search": {
-        "href": "https://train.v1.courtapi.com/courts/pacer/azbtest/cases/search"
+        "href": "http://courtapi.courtio.dev.azk.io/courts/pacer/azbtest/cases/search"
       }
     },
     "name": "Arizona TEST Bankruptcy Court",
@@ -163,7 +163,7 @@ that court, or import a case from PACER.
 
 ### Search Court Cases
 
-Usage: `search-court-cases.sh <court code> <case number>`
+Usage: `./court/search-cases.sh <court code> <case number>`
 
 Endpoint: `POST /courts/pacer/{court}/cases/search`
 
@@ -174,7 +174,7 @@ search terms that could be used.
 Example:
 
 ```shell
-  $ search-court-cases.sh orbtrain 6:14-bk-63618 | jq
+  $ ./court/search-cases.sh orbtrain 6:14-bk-63618 | jq
   {
     "cases": [
       {
@@ -188,13 +188,13 @@ Example:
         "lead_bk_case_title": null,
         "links": {
           "dockets": {
-            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets"
+            "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618/dockets"
           },
           "self": {
-            "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
+            "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618"
           }
         },
-        "timestamp": 1533058495.07583,
+        "timestamp": "2018-09-24T17:37:18.440870Z",
         "title": "Joseph Wayne Sample and Sarah Lynn Sample"
       }
     ],
@@ -204,6 +204,8 @@ Example:
 ```
 
 ### Show a Specific Court Case
+
+Usage: `./court/show-case.sh <court code> <case number>`
 
 Endpoint: `GET /cases/pacer/{court}/{case}`
 
@@ -222,7 +224,7 @@ digits).
 Show a case that has not been imported from PACER yet:
 
 ```shell
-  $ show-court-case.sh orbtrain 6:14-bk-63618 | jq
+  $ ./court/show-case.sh orbtrain 6:14-bk-63618 | jq
   {
     "error": "No Matching Case Found for 6:14-bk-63618 at orbtrain"
   }
@@ -234,60 +236,45 @@ to import it from PACER first.
 Show a case that has been imported from PACER:
 
 ```shell
-  $ show-court-case.sh orbtrain 6:14-bk-63618 | jq
+  $ ./court/show-case.sh orbtrain 6:14-bk-63618 | jq
   {
     "case": {
-      "appeal_case_uuid": null,
       "assets": "Unknown",
       "assigned_to": null,
-      "case_chapter_id": 1,
-      "case_court_id": 221,
-      "case_id": 5085876,
-      "case_id_external": 458895,
+      "case_category": "bankruptcy",
       "case_no": "6:14-bk-63618",
-      "case_petition_id": null,
       "case_title": "Joseph Wayne Sample and Sarah Lynn Sample",
-      "case_type_id": 1,
-      "case_uuid": "orbtrain_458895",
+      "case_type": "bk",
       "cause": null,
       "ch11_type": null,
-      "ch11_type_code": null,
       "chapter": 7,
-      "citation": "Bankr.D.Or.TRAIN.",
-      "court": "orbtrain",
-      "court_name": "orbtrain",
-      "created": "2018-07-31 16:44:36.671892+00",
+      "court_code": "orbtrain",
       "date_closed": null,
       "date_discharged": null,
-      "date_filed": "10/15/1914",
-      "date_of_last_filing": null,
-      "date_plan_confirmed": null,
+      "date_filed": "10/15/2014",
+      "date_of_last_filing": "10/15/2014",
       "date_terminated": null,
-      "disabled": 0,
       "disposition": null,
-      "has_asset": null,
-      "industry": null,
-      "is_business_bankruptcy": null,
+      "has_asset": "No",
       "judge_name": null,
       "jurisdiction": null,
       "jury_demand": null,
-      "lead_case_uuid": null,
-      "liabilities": "Unknown",
-      "modified": "2018-07-31 16:47:09.663273+00",
-      "naics_code": null,
-      "nature_of_debt": null,
+      "modified": "2018-09-24T17:37:18.440870Z",
       "nature_of_suit_code": null,
-      "referred_to": null,
-      "timestamp": 1533055629.66327,
-      "title": "Joseph Wayne Sample and Sarah Lynn Sample",
-      "uri_id": 85063766,
-      "website": null
+      "petition_type": "v",
+      "plan_confirmed": null,
+      "referred_to": null
     },
     "links": {
+      "pacer-update": {
+        "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618",
+        "method": "POST"
+      },
       "self": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
+        "href": "http://courtapi.courtio.dev.azk.io/cases/pacer/orbtrain/6:14-bk-63618"
       }
-    }
+    },
+    "menu": {}
   }
 ```
 

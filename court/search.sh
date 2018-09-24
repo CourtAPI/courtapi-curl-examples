@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $(dirname $0)/config.sh
+. $(dirname $0)/../config.sh
 
 # show test courts
 curl -s -XGET $COURTAPI_BASE_URL/courts/pacer?test=true
