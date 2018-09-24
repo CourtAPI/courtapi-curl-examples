@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $(dirname $0)/config.sh
+. $(dirname $0)/../config.sh
 
 if [ $# -ne 2 ]; then
   echo "Usage: $0 <pacer username> <pacer password>"

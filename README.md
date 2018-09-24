@@ -17,7 +17,7 @@ your CourtAPI `APP_ID` and `SECRET`.
  $ export COURTAPI_SECRET="your-secret"
 ```
 
-For local examples, using `courtapi.inforuptcy.dev.azk.io`, you can use
+For local examples, using `courtapi.courtio.dev.azk.io`, you can use
 anything for these.  For the training or live sites, you must use your real
 values.  The default is to use the local dev environment.
 
@@ -30,35 +30,34 @@ The following scripts demonstrate this functionality:
 
 ### Save PACER Credentials
 
-Usage: `save-pacer-credentials.sh <PACER username> <PACER password>`
+Usage: `./pacer/save-credentials.sh <PACER username> <PACER password>`
 
 Endpoint: `POST /pacer/credentials`
 
 Example:
 
 ```shell
-  $ save-pacer-credentials.sh dummy test | jq
+  ./pacer/save-credentials.sh test secret | jq
   {
-    "app_id": "abc12345",
-    "pacer_user": "dummy"
+    "app_id": "25ed3872",
+    "pacer_user": "test"
   }
 ```
 
 ### Show PACER Credentials
 
-Usage: `show-pacer-credentials.sh`
+Usage: `./pacer/show-credentials.sh`
 
 Endpoint: `GET /pacer/credentials`
 
 Example:
 
 ```shell
-  $ show-pacer-credentials.sh | jq
+  $ ./pacer/show-credentials.sh | jq
   {
     "app_id": "abc12345",
-    "pacer_user": "dummy"
+    "pacer_user": "test"
   }
-
 ```
 
 ### Delete PACER Credentials
@@ -70,10 +69,10 @@ Endpoint: `DELETE /pacer/credentials`
 Example:
 
 ```shell
-  $ delete-pacer-credentials.sh | jq
+  $ ./pacer/delete-credentials.sh | jq
   {
     "app_id": "abc12345",
-    "pacer_user": "dummy",
+    "pacer_user": "test",
     "status": "deleted"
   }
 ```
