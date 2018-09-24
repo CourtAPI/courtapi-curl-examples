@@ -107,7 +107,7 @@ Example:
         "code": "akbtest",
         "links": {
           "self": {
-            "href": "http://train.v1.courtapi.com/courts/pacer/akbtest"
+            "href": "https://train.vi.courtapi.com/courts/pacer/akbtest"
           }
         },
         "name": "Alaska TEST Bankruptcy Court"
@@ -116,7 +116,7 @@ Example:
         "code": "akbtrain",
         "links": {
           "self": {
-            "href": "http://train.v1.courtapi.com/courts/pacer/akbtrain"
+            "href": "https://train.vi.courtapi.com/courts/pacer/akbtrain"
           }
         },
         "name": "Alaska TRAIN Bankruptcy Court"
@@ -143,10 +143,10 @@ Example:
     "citation": "Bankr.D.Ariz.TEST",
     "links": {
       "cases_report_bk": {
-        "href": "http://train.v1.courtapi.com/courts/pacer/azbtest/cases/report/bankruptcy"
+        "href": "https://train.vi.courtapi.com/courts/pacer/azbtest/cases/report/bankruptcy"
       },
       "cases_search": {
-        "href": "http://train.v1.courtapi.com/courts/pacer/azbtest/cases/search"
+        "href": "https://train.vi.courtapi.com/courts/pacer/azbtest/cases/search"
       }
     },
     "name": "Arizona TEST Bankruptcy Court",
@@ -188,10 +188,10 @@ Example:
         "lead_bk_case_title": null,
         "links": {
           "dockets": {
-            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets"
+            "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets"
           },
           "self": {
-            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
+            "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
           }
         },
         "timestamp": "2018-09-24T17:37:18.440870Z",
@@ -267,11 +267,11 @@ Show a case that has been imported from PACER:
     },
     "links": {
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618",
         "method": "POST"
       },
       "self": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
       }
     },
     "menu": {}
@@ -300,7 +300,7 @@ This means we need to update the docket entries from PACER, using the
       "content": [],
       "links": {
         "self": {
-          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=500&page_number=1"
+          "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=500&page_number=1"
         }
       },
       "page_size": 500,
@@ -320,14 +320,14 @@ This means we need to update the docket entries from PACER, using the
     },
     "links": {
       "header": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
       }
     }
   }
@@ -379,7 +379,7 @@ update the docket entries for a case.  The response is quite long and detailed.
       "lead_case_uuid": null,
       "links": {
         "self": {
-          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-6361"
+          "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-6361"
         }
       },
       "modified": "2018-09-24T17:47:48.121075Z",
@@ -413,7 +413,7 @@ update the docket entries for a case.  The response is quite long and detailed.
       "description": "Docket Report",
       "pages": "1",
       "timestamp": "2018-09-24T17:47:46.594939Z",
-      "user_id": "irtraining"
+      "user_id": "testing"
     }
   }
 ```
@@ -465,7 +465,7 @@ Example:
       "lead_case_uuid": null,
       "links": {
         "self": {
-          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
+          "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618"
         }
       },
       "modified": "2018-09-24T17:58:47.477298Z",
@@ -492,7 +492,7 @@ Example:
               "friendly_name": null,
               "links": {
                 "order_pdf": {
-                  "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+                  "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
                 }
               },
               "number": 1,
@@ -501,7 +501,7 @@ Example:
           ],
           "links": {
             "pacer-update": {
-              "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+              "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
               "method": "POST"
             }
           }
@@ -524,7 +524,7 @@ Example:
       "description": "Docket Report",
       "pages": "1",
       "timestamp": "2018-09-24T17:58:46.158385Z",
-      "user_id": "irtraining"
+      "user_id": "testing"
     }
   }
 ```
@@ -573,7 +573,7 @@ to get the documents or the link to this specific docket entry, respectively.
                 "friendly_name": null,
                 "links": {
                   "order_pdf": {
-                    "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+                    "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
                   }
                 },
                 "number": 1,
@@ -582,7 +582,7 @@ to get the documents or the link to this specific docket entry, respectively.
             ],
             "links": {
               "pacer-update": {
-                "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+                "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
                 "method": "POST"
               }
             }
@@ -594,10 +594,10 @@ to get the documents or the link to this specific docket entry, respectively.
           "has_pdf_link_on_pacer": true,
           "links": {
             "documents": {
-              "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
+              "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
             },
             "self": {
-              "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+              "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
             }
           },
           "timestamp": "2018-09-24T17:47:48.147230Z"
@@ -605,7 +605,7 @@ to get the documents or the link to this specific docket entry, respectively.
       ],
       "links": {
         "self": {
-          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=500&page_number=1"
+          "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc&page_size=500&page_number=1"
         }
       },
       "page_size": 500,
@@ -659,14 +659,14 @@ to get the documents or the link to this specific docket entry, respectively.
     },
     "links": {
       "header": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets?sort_order=desc"
       }
     }
   }
@@ -704,7 +704,7 @@ Example:
             "friendly_name": null,
             "links": {
               "order_pdf": {
-                "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+                "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
               }
             },
             "number": 1,
@@ -713,7 +713,7 @@ Example:
         ],
         "links": {
           "pacer-update": {
-            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+            "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
             "method": "POST"
           }
         }
@@ -726,24 +726,24 @@ Example:
       "has_pdf_link_on_pacer": true,
       "links": {
         "documents": {
-          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
+          "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents"
         },
         "self": {
-          "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+          "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
         }
       },
       "timestamp": "2018-09-24T17:47:48.147230Z"
     },
     "links": {
       "header": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/header"
       },
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/update",
         "method": "POST"
       },
       "self": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000"
       }
     }
   }
@@ -855,7 +855,7 @@ Example:
     "documents": [],
     "links": {
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
         "method": "POST"
       }
     }
@@ -881,7 +881,7 @@ This happens in the background.
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+            "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
           }
         },
         "number": 1,
@@ -890,7 +890,7 @@ This happens in the background.
     ],
     "links": {
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
         "method": "POST"
       }
     }
@@ -912,7 +912,7 @@ And now we can show the documents again:
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
+            "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1"
           }
         },
         "number": 1,
@@ -921,7 +921,7 @@ And now we can show the documents again:
     ],
     "links": {
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents",
         "method": "POST"
       }
     }
@@ -941,7 +941,7 @@ Example:
     "document": {},
     "links": {
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
         "method": "POST"
       }
     },
@@ -949,7 +949,7 @@ Example:
   }
 ```
 
-Because the `document` is empty, we need to POST to the document part URL to
+Because the `document` is empty, we need to POST to the document PACER update URL to
 purchase the document from PACER.
 
 The `docket/update-entry-pdf.sh` script will do this. It uses the CourtAPI
@@ -964,7 +964,7 @@ endpoint
       "cost": "0.70000",
       "description_html": null,
       "docket_no": "1.00000",
-      "download_url": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/documents/docket/download/eyJjYXNlX3V1aWQiO...",
+      "download_url": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/documents/docket/download/eyJjYXNlX3V1aWQiO...",
       "filename": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
       "free": null,
       "friendly_name": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
@@ -975,7 +975,7 @@ endpoint
     },
     "links": {
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
         "method": "POST"
       }
     },
@@ -992,16 +992,16 @@ endpoint
         "datetime": "Mon Sep 24 14:12:58 2018",
         "description": "Image:1-0",
         "pages": "7",
-        "user_id": "irtraining"
+        "user_id": "testing"
       }
     }
   }
 ````
 From this response, we have everything needed to save the PDF locally.  Note
-that we received a receipt from PACER in the response indicating the
-pass through charge amount. We can fetch the PDF at the `part.download_url`
-location, and use the `part.filename` or `part.friendly_name` to save it
-locally.  Note that the fetch PDF link is a local link to CourtAPI, and will
+that we received a receipt from PACER in the response indicating the pass
+through charge amount. We can fetch the PDF at the `document.download_url`
+location, and use the `document.filename` or `document.friendly_name` to save
+it locally.  Note that the fetch PDF link is a local link to CourtAPI, and will
 return a 302 redirect to the actual location of the PDF file.
 
 The `GET` endpoint now will return the same information:
@@ -1012,7 +1012,7 @@ The `GET` endpoint now will return the same information:
     "document": {
       "cost": "0.70000",
       "description_html": null,
-      "download_url": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/documents/docket/download/eyJjYXNlX3V...",
+      "download_url": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/documents/docket/download/eyJjYXNlX3V...",
       "filename": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
       "friendly_name": "Bankr.D.Or.TRAIN._6-14-bk-63618_1.00000.pdf",
       "number": 1,
@@ -1020,7 +1020,7 @@ The `GET` endpoint now will return the same information:
     },
     "links": {
       "pacer-update": {
-        "href": "http://train.v1.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
+        "href": "https://train.vi.courtapi.com/cases/pacer/orbtrain/6:14-bk-63618/dockets/1.00000/documents/1",
         "method": "POST"
       }
     },
@@ -1030,8 +1030,8 @@ The `GET` endpoint now will return the same information:
 
 Note that the origin here is `cache` and there were no PACER fees incurred for
 the request this time.  Again, simply fetch the PDF from the
-`part.download_url` location, saving as whatever you prefer (or, use
-`part.filename` or `part.friendly_name`).
+`document.download_url` location, saving as whatever you prefer (or, use
+`document.filename` or `document.friendly_name`).
 
 ## Purchase and Display a Claims Register
 
@@ -1047,13 +1047,13 @@ E.g.: `search-court-cases.sh azbtest 2:07-bk-00012`
 
 ### Show Claims
 
-Usage: `list-case-claims.sh <court> <case number>`
+Usage: `./claim/list.sh <court> <case number>`
 
 Endpoint: `GET /cases/pacer/{court}/{case}/claims` endpoint.
 
 Example:
 ```shell
-  $ list-case-claims.sh azbtest 2:07-bk-00012
+  $ ./claim/list.sh azbtest 2:07-bk-00012
   {
     "claimed_amounts": {
       "admin_claimed": "0.00",
@@ -1067,23 +1067,23 @@ Example:
       "content": [],
       "links": {
         "self": {
-          "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=10&page_number=1"
+          "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=500&page_number=1"
         }
       },
-      "page_size": 10,
+      "page_size": 500,
       "total_items": 0,
       "total_pages": 1
     },
     "links": {
       "header": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
       },
       "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/update",
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/update",
         "method": "POST"
       },
       "self": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims"
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims"
       }
     }
   }
@@ -1094,159 +1094,266 @@ We can see that `entries.content` is empty, so we need to use the
 `update-case-claims.sh` will make this request for us (PACER pass through
 charges apply)
 
+### Update (Purchase) Claims Register Entries
+
+Usage `./claim/update.sh <court code> <case number>`
+
+Endpoint `POST /cases/pacer/{court_code}/{case_number}/claims/update`
+
 ```shell
-  $ update-case-claims.sh azbtest 2:07-bk-00012 | jq
+  $ ./claim/update.sh azbtest 2:07-bk-00012 | jq
   {
     "case": {
       "appeal_case_uuid": null,
       "assets": "Unknown",
       "assigned_to": null,
-      "case_chapter_id": null,
+      "case_chapter_id": 3,
       "case_court_id": 107,
-      "case_id": 5083528,
       "case_id_external": 2644,
       "case_no": "2:07-bk-00012",
-      "case_petition_id": null,
-      "case_title": "TST Joseph Wayne Sample and Sarah Lynn Sample",
+      "case_petition_id": 1,
+      "case_title": "Joseph Wayne Sample and Sarah Lynn Sample",
       "case_type_id": 1,
-      "case_uuid": "azbtest_2644",
       "cause": null,
       "ch11_type": null,
       "ch11_type_code": null,
-      "chapter": null,
+      "chapter": 11,
       "court": "azbtest",
       "court_name": "azbtest",
-      "created": "2018-07-31 18:38:17.36255+00",
+      "created": "2018-09-24T21:00:28.063665Z",
       "date_closed": null,
       "date_discharged": null,
-      "date_filed": null,
-      "date_of_last_filing": null,
-      "date_plan_confirmed": null,
+      "date_filed": "02/19/2007",
+      "date_of_last_filing": "10/08/2013",
+      "date_plan_confirmed": "07/30/2007",
       "date_terminated": null,
       "disabled": 0,
       "disposition": null,
-      "has_asset": null,
-      "industry": null,
+      "has_asset": 1,
       "is_business_bankruptcy": null,
-      "judge_name": null,
+      "judge_name": "Brenda Moody Whinery",
       "jurisdiction": null,
       "jury_demand": null,
       "lead_case_uuid": null,
-      "liabilities": "Unknown",
-      "modified": "2018-07-31 18:42:26.124362+00",
-      "naics_code": null,
+      "links": {
+        "self": {
+          "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012"
+        }
+      },
+      "modified": "2018-09-24T21:30:48.788762Z",
       "nature_of_debt": null,
       "nature_of_suit_code": null,
       "ncl_parties": [],
       "referred_to": null,
       "schedule_ab": null,
-      "timestamp": 1533062546.12436,
-      "title": "TST Joseph Wayne Sample and Sarah Lynn Sample",
-      "uri_id": 85055163,
-      "website": null
+      "timestamp": "2018-09-24T21:30:48.788760Z",
+      "title": "Joseph Wayne Sample and Sarah Lynn Sample",
+      "uri_id": 85055150
     },
-    "forms": {
-      "case_code": "2-07-bk-12",
-      "creditor_name": null,
-      "creditor_no": null,
-      "creditor_type": null,
-      "date_from": null,
-      "date_to": null,
-      "date_type": null,
-      "doc_from": null,
-      "doc_to": null
-    },
-    "items": {
-      "claim_headers": [
-        {
-          "meta": {
-            "case_uuid": "azbtest_2644",
-            "filename": "azbtest_2644",
-            "timestamp": 1533062545.22225
+    "claims": [
+      {
+        "amounts": {
+          "admin": {},
+          "amount": {
+            "claimed": "$160.00"
           },
-          "text": {
-            "header": "... [ header html ] ...",
-            "summary": "... [ summary HTML ] ..."
+          "priority": {},
+          "secured": {},
+          "unknown": {},
+          "unsecured": {
+            "claimed": "$160.00"
           }
-        }
-      ],
-      "claims": [
-        {
-          "meta": {
-            "case_uuid": "azbtest_2644",
-            "claim_no": "1",
-            "filename": "azbtest_2644_1",
-            "timestamp": 1533062545.22225
-          },
-          "text": {
-            "amounts": {
-              "admin": {},
-              "amount": {
-                "claimed": "$160.00"
-              },
-              "priority": {},
-              "secured": {},
-              "unknown": {},
-              "unsecured": {
-                "claimed": "$160.00"
-              }
-            },
-            "creditor": "Bloomingdales\nPO Box 8745\nNew York NY 10012-8745",
-            "description": "(1-1) test<BR>",
-            "history": [
-              {
-                "case_uuid": "azbtest_2644",
-                "claim_date": "06/11/2007",
-                "claim_history_no": 1,
-                "claim_no": "1-1",
-                "claim_seq": 0,
-                "claim_text": "Claim #1 filed by Bloomingdales, Amount claimed: $160.00 (Fouche, Cindy)",
-                "claim_uri": "https://ecf-test.azb.uscourts.gov/cgi-bin/show_doc.pl?caseid=2644&claim_id=51742&claim_num=1-1&magic_num=MAGIC",
-                "detail_uri": "https://ecf-test.azb.uscourts.gov/cgi-bin/ClaimHistory.pl?2644,1-1,1064,2:07-bk-00012-BMW"
-              }
-            ],
-            "info": {
-              "claim_no": "1",
-              "original_entered_date": "06/11/2007",
-              "original_filed_date": "06/11/2007"
-            },
-            "remarks": null,
-            "status": {
-              "entered_by": "Cindy Fouche",
-              "filed_by": "CR",
-              "modified": "11/15/2007"
-            }
+        },
+        "claim_no": "1",
+        "creditor": "Bloomingdales\nPO Box 8745\nNew York NY 10012-8745",
+        "description": "(1-1) test<BR>",
+        "history": [
+          {
+            "claim_date": "06/11/2007",
+            "claim_history_no": "1",
+            "claim_no": "1-1",
+            "claim_seq": 0,
+            "claim_text": "Claim #1 filed by Bloomingdales, Amount claimed: $160.00 (Fouche, Cindy)",
+            "history_no": 1,
+            "sequence_number": "1.00000"
           }
-        }
-      ],
-      "receipts": [
-        {
-          "meta": {
-            "case_uuid": "azbtest_2644",
-            "filename": "azbtest_2644",
-            "timestamp": 1533062545.22225
-          },
-          "text": {
-            "client_code": "",
-            "cost": "0.10",
-            "criteria": "2:07-bk-00012-BMW",
-            "datetime": "07/31/2018 11:42:26",
-            "description": "Claims Register",
-            "pages": "1",
-            "user_id": "paceruser:3611309:0"
-          }
-        }
-      ]
-    },
-    "queries": {}
+        ],
+        "info": {
+          "claim_no": "1",
+          "original_entered_date": "06/11/2007",
+          "original_filed_date": "06/11/2007"
+        },
+        "remarks": null,
+        "status": {
+          "entered_by": "Cindy Fouche",
+          "filed_by": "CR",
+          "modified": "11/15/2007"
+        },
+        "timestamp": "2018-09-24T21:30:51.403973Z"
+      }
+    ],
+    "receipts": {
+      "client_code": "",
+      "cost": "0.10",
+      "criteria": "2:07-bk-00012-BMW",
+      "datetime": "09/24/2018 14:30:52",
+      "description": "Claims Register",
+      "filename": "azbtest_2644",
+      "pages": "1",
+      "timestamp": "2018-09-24T21:30:51.403973Z",
+      "user_id": "testing"
+    }
   }
 ```
 
 Note that there is a receipt for the claims register purchase in the response.
-Now we can re-run the `GET` request to show the claims register:
+
+Just like the docket update endpoint, we can ask for the claims documents to be
+returned with the claims entries here by passing the form parameter
+`include_documents`.  The script will do that for us if we pass the value as a
+third argument.
 
 ```shell
-  $ list-case-claims.sh azbtest 2:07-bk-00012 | jq
+  $ ./claim/update.sh azbtest 2:07-bk-00012 1  | jq
+  {
+    "case": {
+      "appeal_case_uuid": null,
+      "assets": "Unknown",
+      "assigned_to": null,
+      "case_chapter_id": 3,
+      "case_court_id": 107,
+      "case_id_external": 2644,
+      "case_no": "2:07-bk-00012",
+      "case_petition_id": 1,
+      "case_title": "Joseph Wayne Sample and Sarah Lynn Sample",
+      "case_type_id": 1,
+      "cause": null,
+      "ch11_type": null,
+      "ch11_type_code": null,
+      "chapter": 11,
+      "court": "azbtest",
+      "court_name": "azbtest",
+      "created": "2018-09-24T21:00:28.063665Z",
+      "date_closed": null,
+      "date_discharged": null,
+      "date_filed": "02/19/2007",
+      "date_of_last_filing": "10/08/2013",
+      "date_plan_confirmed": "07/30/2007",
+      "date_terminated": null,
+      "disabled": 0,
+      "disposition": null,
+      "has_asset": 1,
+      "is_business_bankruptcy": null,
+      "judge_name": "Brenda Moody Whinery",
+      "jurisdiction": null,
+      "jury_demand": null,
+      "lead_case_uuid": null,
+      "links": {
+        "self": {
+          "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012"
+        }
+      },
+      "modified": "2018-09-24T21:30:48.788762Z",
+      "nature_of_debt": null,
+      "nature_of_suit_code": null,
+      "ncl_parties": [],
+      "referred_to": null,
+      "schedule_ab": null,
+      "timestamp": "2018-09-24T21:30:48.788760Z",
+      "title": "Joseph Wayne Sample and Sarah Lynn Sample",
+      "uri_id": 85055150
+    },
+    "claims": [
+      {
+        "amounts": {
+          "admin": {},
+          "amount": {
+            "claimed": "$160.00"
+          },
+          "priority": {},
+          "secured": {},
+          "unknown": {},
+          "unsecured": {
+            "claimed": "$160.00"
+          }
+        },
+        "claim_no": "1",
+        "creditor": "Bloomingdales\nPO Box 8745\nNew York NY 10012-8745",
+        "description": "(1-1) test<BR>",
+        "history": [
+          {
+            "binder": {
+              "documents": [
+                {
+                  "cost": "0.30",
+                  "description_html": "Claim 51742-0",
+                  "docket_no": null,
+                  "filename": null,
+                  "free": null,
+                  "friendly_name": null,
+                  "links": {
+                    "order_pdf": {
+                      "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+                    }
+                  },
+                  "number": 1,
+                  "pages": 3
+                }
+              ],
+              "links": {
+                "pacer-update": {
+                  "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+                  "method": "POST"
+                }
+              }
+            },
+            "claim_date": "06/11/2007",
+            "claim_history_no": "1",
+            "claim_no": "1-1",
+            "claim_seq": 0,
+            "claim_text": "Claim #1 filed by Bloomingdales, Amount claimed: $160.00 (Fouche, Cindy)",
+            "history_no": 1,
+            "sequence_number": "1.00000"
+          }
+        ],
+        "info": {
+          "claim_no": "1",
+          "original_entered_date": "06/11/2007",
+          "original_filed_date": "06/11/2007"
+        },
+        "remarks": null,
+        "status": {
+          "entered_by": "Cindy Fouche",
+          "filed_by": "CR",
+          "modified": "11/15/2007"
+        },
+        "timestamp": "2018-09-24T21:38:06.699152Z"
+      }
+    ],
+    "receipts": {
+      "client_code": "",
+      "cost": "0.10",
+      "criteria": "2:07-bk-00012-BMW",
+      "datetime": "09/24/2018 14:38:07",
+      "description": "Claims Register",
+      "filename": "azbtest_2644",
+      "pages": "1",
+      "timestamp": "2018-09-24T21:38:06.699152Z",
+      "user_id": "testing"
+    }
+  }
+```
+
+Note that the claim history entry has a `binder` this time, which contains
+everything needed to jump straight to the "Order PDF" step.  If your goal is to
+fetch PDFs for claims entries, this is all you need to do, and you can go
+straight to the purchase PDF step.
+
+If we re-run the `GET` request to show the claims register, we can see the same
+information now, including the `binder` for the history entry.
+
+```shell
+  $ ./claim/list.sh azbtest 2:07-bk-00012 | jq
   {
     "claimed_amounts": {
       "admin_claimed": "0.00",
@@ -1272,29 +1379,51 @@ Now we can re-run the `GET` request to show the claims register:
           "history": [
             {
               "action": "https://ecf-test.azb.uscourts.gov/cgi-bin/show_doc.pl?caseid=2644&claim_id=51742&claim_num=1-1&magic_num=MAGIC",
-              "case_uuid": "azbtest_2644",
+              "binder": {
+                "documents": [
+                  {
+                    "cost": "0.30",
+                    "description_html": "Claim 51742-0",
+                    "docket_no": null,
+                    "filename": null,
+                    "free": null,
+                    "friendly_name": null,
+                    "links": {
+                      "order_pdf": {
+                        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+                      }
+                    },
+                    "number": 1,
+                    "pages": 3
+                  }
+                ],
+                "links": {
+                  "pacer-update": {
+                    "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+                    "method": "POST"
+                  }
+                }
+              },
               "claim_date": "06/11/2007",
               "claim_no": "1-1",
               "claim_seq": "1-1.00000",
               "claim_text": "06/11/2007 Claim #1 filed by Bloomingdales, Amount claimed: $160.00 (Fouche, Cindy)",
-              "claim_uri": null,
-              "detail_uri": null,
               "links": {
                 "documents": {
-                  "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
+                  "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
                 }
               }
             }
           ],
           "info": {
             "claim_no": 1,
+            "modified": "2018-09-24T21:38:08.038270Z",
             "original_entered_date": "06/11/2007",
-            "original_filed_date": "06/11/2007",
-            "timestamp": 1533062546.14804
+            "original_filed_date": "06/11/2007"
           },
           "links": {
             "self": {
-              "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
+              "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
             }
           },
           "remarks": null,
@@ -1303,23 +1432,23 @@ Now we can re-run the `GET` request to show the claims register:
       ],
       "links": {
         "self": {
-          "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=10&page_number=1"
+          "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims?page_size=500&page_number=1"
         }
       },
-      "page_size": 10,
+      "page_size": 500,
       "total_items": 1,
       "total_pages": 1
     },
     "links": {
       "header": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
       },
       "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/update",
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/update",
         "method": "POST"
       },
       "self": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims"
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims"
       }
     }
   }
@@ -1329,7 +1458,8 @@ Just like case docket entries, claims register entries are paged, and if
 `entries.total_pages` is greater than 1, you must fetch all of the pages by
 following the `entries.links.next.href` for each result until you have fetched
 all of the pages.  In this case, there is only one page, so the
-`entries.links.next.href` is not present.
+`entries.links.next.href` is not present.  The default page size is 500 claims
+entries, so for most cases, you should not need to worry about this.
 
 ### Display A Specific Claim
 
@@ -1337,12 +1467,12 @@ Endpoint: `GET /cases/pacer/{court}/{case}/claims/{claim_no}`
 
 This will display a specific claim from the claims register.
 
-Usage: `show-case-claim.sh <court code> <case number> <claim number>`
+Usage: `./claim/show.sh <court code> <case number> <claim number>`
 
 Example:
 
 ```shell
-  $ show-case-claim.sh azbtest 2:07-bk-00012 1 | jq
+  $ ./claim/show.sh azbtest 2:07-bk-00012 1 | jq
   {
     "entry": {
       "amounts": {
@@ -1358,29 +1488,51 @@ Example:
       "history": [
         {
           "action": "https://ecf-test.azb.uscourts.gov/cgi-bin/show_doc.pl?caseid=2644&claim_id=51742&claim_num=1-1&magic_num=MAGIC",
-          "case_uuid": "azbtest_2644",
+          "binder": {
+            "documents": [
+              {
+                "cost": "0.30",
+                "description_html": "Claim 51742-0",
+                "docket_no": null,
+                "filename": null,
+                "free": null,
+                "friendly_name": null,
+                "links": {
+                  "order_pdf": {
+                    "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+                  }
+                },
+                "number": 1,
+                "pages": 3
+              }
+            ],
+            "links": {
+              "pacer-update": {
+                "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+                "method": "POST"
+              }
+            }
+          },
           "claim_date": "06/11/2007",
           "claim_no": "1-1",
           "claim_seq": "1-1.00000",
           "claim_text": "06/11/2007 Claim #1 filed by Bloomingdales, Amount claimed: $160.00 (Fouche, Cindy)",
-          "claim_uri": null,
-          "detail_uri": null,
           "links": {
             "documents": {
-              "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
+              "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000"
             }
           }
         }
       ],
       "info": {
         "claim_no": 1,
+        "modified": "2018-09-24T21:38:08.038270Z",
         "original_entered_date": "06/11/2007",
-        "original_filed_date": "06/11/2007",
-        "timestamp": 1533062546.14804
+        "original_filed_date": "06/11/2007"
       },
       "links": {
         "self": {
-          "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
+          "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
         }
       },
       "remarks": null,
@@ -1388,10 +1540,10 @@ Example:
     },
     "links": {
       "header": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/header"
       },
       "self": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1"
       }
     }
   }
@@ -1401,7 +1553,7 @@ Example:
 
 Endpoint: `GET /cases/pacer/{court}/{case}/claims/{claim_no}/documents/{document_no}`
 
-Usage: `show-case-claim-document.sh <court code> <case number> <claim number> <document number>`
+Usage: `./claim/show-document.sh <court code> <case number> <claim number> <document number>`
 
 Now we will purchase and download the documents for this claim register entry.
 
@@ -1409,35 +1561,32 @@ Now we will purchase and download the documents for this claim register entry.
 
 Example:
 ```shell
-  $ show-case-claim-document.sh azbtest 2:07-bk-00012 1 1.00000 | jq
+  $ ./claim/show-document.sh azbtest 2:07-bk-00012 1 1.00000 | jq
   {
+    "documents": [],
     "links": {
       "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
         "method": "POST"
       }
-    },
-    "parts": []
+    }
   }
 ```
 
-There are no parts present, so we need to update the documents from PACER by
-using the `links.pacer-update` endpoint.  `update-case-claim-document.sh` will
-make this request for us (it takes the same args as
-`show-case-claim-document.sh`).
+There are no documents present, so we need to update the documents from PACER
+by using the `links.pacer-update` endpoint.  `update-case-claim-document.sh`
+will make this request for us (it takes the same args as
+`show-case-claim-document.sh`).  Note that not every claims entry will have
+documents.  Also note that CourtAPI will automatically fetch document
+information when you purchase the claims entries, so this step is typically not
+necessary.
 
 ```shell
-  $ update-case-claim-document.sh azbtest 2:07-bk-00012 1 1.00000 | jq
+  $ ./claim/update-document.sh azbtest 2:07-bk-00012 1 1.00000 | jq
   {
-    "links": {
-      "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
-        "method": "POST"
-      }
-    },
-    "parts": [
+    "documents": [
       {
-        "cost": null,
+        "cost": "0.30",
         "description_html": "Claim 51742-0",
         "docket_no": null,
         "filename": null,
@@ -1445,30 +1594,30 @@ make this request for us (it takes the same args as
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+            "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
           }
         },
         "number": 1,
         "pages": 3
       }
-    ]
+    ],
+    "links": {
+      "pacer-update": {
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+        "method": "POST"
+      }
+    }
   }
 ```
 
 And now we can show the claims document again by using the `GET` method:
 
 ```shell
-  $ show-case-claim-document.sh azbtest 2:07-bk-00012 1 1.00000 | jq
+  $ ./claim/show-document.sh azbtest 2:07-bk-00012 1 1.00000 | jq
   {
-    "links": {
-      "pacer-update": {
-        "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
-        "method": "POST"
-      }
-    },
-    "parts": [
+    "documents": [
       {
-        "cost": null,
+        "cost": "0.30",
         "description_html": "Claim 51742-0",
         "docket_no": null,
         "filename": null,
@@ -1476,96 +1625,114 @@ And now we can show the claims document again by using the `GET` method:
         "friendly_name": null,
         "links": {
           "order_pdf": {
-            "href": "https://train.v1.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
+            "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1"
           }
         },
         "number": 1,
         "pages": 3
       }
-    ]
+    ],
+    "links": {
+      "pacer-update": {
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000",
+        "method": "POST"
+      }
+    }
   }
 ```
 
-The next step is to follow the `links.order_pdf` for each `parts` entry.  This uses the CourtAPI endpoint
+The next step is to follow the `links.order_pdf` for each `documents` entry.  This uses the CourtAPI endpoint
 `GET /cases/pacer/{court}/{case}/claims/{claim_no}/documents/{document_no}/{part_no}` endpoint.
 
 ```shell
-  $ show-case-claim-document-pdf.sh azbtest 2:07-bk-00012 1 1.00000 1 | jq
+  $ ./claim/show-pdf.sh azbtest 2:07-bk-00012 1 1.00000 1 | jq
   {
-    "message": null,
-    "origin": "cache",
-    "part": {},
-    "status": "success"
+    "document": {},
+    "links": {
+      "pacer-update": {
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1",
+        "method": "POST"
+      }
+    },
+    "origin": "cache"
   }
 ```
 
-Note that the `part` field is empty.
+Note that the `document` field is empty.
 
-We have to `POST` to the same endpoint to purchase the PDF.
+We have to `POST` to the same endpoint to purchase the PDF in this case.
 
 Example:
 
 ```shell
-  $ buy-case-claim-document-pdf.sh azbtest 2:07-bk-00012 1 1.00000 1 | jq
+  $ ./claim/buy-pdf.sh azbtest 2:07-bk-00012 1 1.00000 1 | jq
   {
-    "origin": "PACER",
-    "part": {
+    "document": {
       "action": "https://ecf-test.azb.uscourts.gov/doc2/02418759",
       "case_uuid": "azbtest_2644",
+      "cost": "0.30000",
       "description_html": "Claim 51742-0",
       "docket_no": "1-1.00000",
-      "download_url": "http://aws-s3.inforuptcy.dev.azk.io:32799/inforuptcy-storage/pacer/azbtest/2644/claims/1/1.00000/1-12B88492-94F4-11E8-98AE-F7223ABBF895?response-content-disposition=attachment%3B+filename%3DBankr.D.Ariz.TEST_2-07-bk-00012_Claim_1-1.pdf&AWSAccessKeyId=courtapi_dummy_key&Expires=1848682864&Signature=d0HxjSozTl4yeeWoSjbzmcqGDKg%3D",
+      "download_url": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/documents/claims/download/eyJjYXNlX3V1a...",
       "filename": "Bankr.D.Ariz.TEST_2-07-bk-00012_Claim_1-1.pdf",
       "friendly_name": "Bankr.D.Ariz.TEST_2-07-bk-00012_Claim_1-1.pdf",
       "history_number": "1",
       "number": 1,
-      "ocr_link": "http://aws-s3.inforuptcy.dev.azk.io:32799/inforuptcy-storage/pacer-ocr/pacer/azbtest/2644/claims/1/1.00000/1-12B88492-94F4-11E8-98AE-F7223ABBF895.txt?response-content-disposition=attachment%3B+filename%3DBankr.D.Ariz.TEST_2-07-bk-00012_Claim_1-1.pdf.txt&AWSAccessKeyId=courtapi_dummy_key&Expires=1848682864&Signature=xwrmK0jA2Dsnapev8U7fZgPFTHs%3D",
-      "pages": 3,
-      "raw_location": "s3://inforuptcy-storage/pacer/azbtest/2644/claims/1/1.00000/1-12B88492-94F4-11E8-98AE-F7223ABBF895"
+      "ocr_link": "http://...",
+      "pages": 3
     },
+    "links": {
+      "pacer-update": {
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1",
+        "method": "POST"
+      }
+    },
+    "origin": "PACER",
     "receipt": {
       "meta": {
         "case_uuid": null,
-        "filename": "121214f4-94f4-11e8-98ae-f7223abbf895",
         "timestamp": null
       },
       "text": {
         "client_code": "",
         "cost": "0.30",
         "criteria": "2:07-bk-00012-BMW",
-        "datetime": "Tue Jul 31 12:01:03 2018",
+        "datetime": "Mon Sep 24 14:55:33 2018",
         "description": "Claim 51742-0",
         "pages": "3",
-        "user_id": "test:3611309:0"
+        "user_id": "testing"
       }
-    },
-    "status": "success"
+    }
   }
 ```
 
-At this point, you can fetch the PDF from the `part.download_url` location, and
-save it at the location of your choice, or, use the `part.filename` or
+At this point, you can fetch the PDF from the `document.download_url` location,
+and save it at the location of your choice, or, use the `part.filename` or
 `part.friendly_name` suggested filenames.  Note that we have a `receipt` for
 the PACER pass through charges.
 
 We can re-fetch the PDF endpoint using the `GET` method for no charge:
 
 ```shell
-  $ show-case-claim-document-pdf.sh azbtest 2:07-bk-00012 1 1.00000 1 | jq
+  $ ./claim/show-pdf.sh azbtest 2:07-bk-00012 1 1.00000 1 | jq
   {
-    "origin": "cache",
-    "part": {
-      "cost": null,
+    "document": {
+      "cost": "0.30000",
       "description_html": "Claim 51742-0",
-      "download_url": "http://aws-s3.inforuptcy.dev.azk.io:32799/inforuptcy-storage/pacer/azbtest/2644/claims/1/1.00000/1-12B88492-94F4-11E8-98AE-F7223ABBF895?response-content-disposition=attachment%3B+filename%3DBankr.D.Ariz.TEST_2-07-bk-00012_Claim_1-1.pdf&AWSAccessKeyId=courtapi_dummy_key&Expires=1848683017&Signature=VZHSa9y4pERSNVhF%2BrWK0IQmn%2FE%3D",
+      "download_url": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/documents/claims/download/eyJjYXNlX3V",
       "filename": "Bankr.D.Ariz.TEST_2-07-bk-00012_Claim_1-1.pdf",
       "friendly_name": "Bankr.D.Ariz.TEST_2-07-bk-00012_Claim_1-1.pdf",
       "number": 1,
       "pages": 3
     },
-    "status": "success"
+    "links": {
+      "pacer-update": {
+        "href": "https://train.vi.courtapi.com/cases/pacer/azbtest/2:07-bk-00012/claims/1/documents/1.00000/1",
+        "method": "POST"
+      }
+    },
+    "origin": "cache"
   }
 ```
-
-Note that there are no charges this time, and the `part.download_url` is
+Note that there are no charges this time, and the `document.download_url` is
 available showing where to fetch the PDF.
