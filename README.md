@@ -1737,7 +1737,7 @@ We can re-fetch the PDF endpoint using the `GET` method for no charge:
 Note that there are no charges this time, and the `document.download_url` is
 available showing where to fetch the PDF.
 
-### Advanced Filings Search
+## Advanced Filings Search
 
 Endpoint: `GET /cases/pacer/search-filings`
 
