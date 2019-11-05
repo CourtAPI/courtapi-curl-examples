@@ -1852,3 +1852,211 @@ Example:
     }
   ]
 }
+```
+
+## Advanced Filings Search: Business Bankruptcies
+
+Endpoint: `GET /cases/pacer/search-filings`
+
+Usage: `./pacer/search-business-cases.sh [<date_filed_from>]`
+
+Example:
+```shell
+$ pacer/search-business-cases.sh 11/10/2014 | jq
+{
+  "results": [
+    {
+      "case_date_filed": "11/10/2014",
+      "referred_to": null,
+      "case_type": "bk",
+      "case_id_external": 156595,
+      "case_assets": "Unknown",
+      "join": {
+        "name": "cases"
+      },
+      "case_type_id": 1,
+      "type_code": 0,
+      "case_petition_id": null,
+      "case_judge_name": null,
+      "date_terminated": null,
+      "ch11_type": null,
+      "ch11_type_code": null,
+      "has_asset": false,
+      "naics_code": null,
+      "case_no": "1:14-bk-12515",
+      "website": null,
+      "chapter": 11,
+      "court_name": "debke",
+      "query": "cases",
+      "court_code": [
+        "de",
+        "03"
+      ],
+      "date_filed": "11/10/2014",
+      "date_plan_confirmed": null,
+      "case_nature_of_suit_code": null,
+      "links": {
+        "self": {
+          "href": "http://courtapi.dev.courtio.com/cases/pacer/debke/1:14-bk-12515"
+        }
+      },
+      "nature_of_debt": "Business",
+      "case_id": 4009950,
+      "cause": null,
+      "lead_case_uuid": null,
+      "date_of_last_filing": "06/04/2015",
+      "date_closed": null,
+      "case_naics_code": null,
+      "party_name": [],
+      "appeal_case_uuid": null,
+      "schedule_ab": null,
+      "liabilities": "Unknown",
+      "case_court": "debke",
+      "assets": "Unknown",
+      "court": "debke",
+      "date_discharged": null,
+      "jury_demand": null,
+      "assigned_to": null,
+      "case_chapter": 11,
+      "title": "Dendreon Corporation",
+      "modified": "2017-07-09T05:13:32.653406Z",
+      "case_court_id": 27,
+      "nature_of_suit_code": null,
+      "case_chapter_id": 3,
+      "index_timestamp": 1569933971,
+      "created": "2014-11-10T06:47:06.292671Z",
+      "case_title": "Dendreon Corporation",
+      "industry": null,
+      "ncl_parties": [],
+      "id": "cases:debke_156595",
+      "jurisdiction": null,
+      "document_type": "cases",
+      "case_liabilities": "Unknown",
+      "is_business_bankruptcy": true,
+      "judge_name": null,
+      "disposition": null
+    },
+    {
+      "case_id": 4268810,
+      "lead_case_uuid": null,
+      "cause": null,
+      "date_plan_confirmed": null,
+      "case_nature_of_suit_code": null,
+      "date_filed": "02/05/2015",
+      "links": {
+        "self": {
+          "href": "http://courtapi.dev.courtio.com/cases/pacer/debke/1:15-bk-10197"
+        }
+      },
+      "nature_of_debt": "Business",
+      "chapter": 11,
+      "court_name": "debke",
+      "website": null,
+      "court_code": [
+        "de",
+        "03"
+      ],
+      "query": "cases",
+      "case_no": "1:15-bk-10197",
+      "case_judge_name": "Brendan Linehan Shannon",
+      "naics_code": null,
+      "has_asset": true,
+      "ch11_type_code": null,
+      "date_terminated": null,
+      "ch11_type": null,
+      "case_petition_id": 1,
+      "case_type_id": 1,
+      "case_assets": "More than $1 billion",
+      "join": {
+        "name": "cases"
+      },
+      "type_code": 0,
+      "case_date_filed": "02/05/2015",
+      "referred_to": null,
+      "case_id_external": 157447,
+      "case_type": "bk",
+      "disposition": null,
+      "judge_name": "Brendan Linehan Shannon",
+      "is_business_bankruptcy": true,
+      "case_liabilities": "More than $1 billion",
+      "id": "cases:debke_157447",
+      "jurisdiction": null,
+      "industry": null,
+      "ncl_parties": [
+        {
+          "role": "db",
+          "name": "RadioShack Corporation"
+        }
+      ],
+      "document_type": "cases",
+      "index_timestamp": 1569933975,
+      "case_chapter_id": 3,
+      "case_title": "RadioShack Corporation",
+      "created": "2015-02-05T22:10:04.971241Z",
+      "title": "RadioShack Corporation",
+      "nature_of_suit_code": null,
+      "modified": "2017-07-09T05:13:32.653406Z",
+      "case_court_id": 27,
+      "court": "debke",
+      "case_court": "debke",
+      "assets": "More than $1 billion",
+      "case_chapter": 11,
+      "assigned_to": null,
+      "date_discharged": null,
+      "jury_demand": null,
+      "schedule_ab": {
+        "intangibles": 1000000,
+        "total": 6734500,
+        "cash": 100000,
+        "property": 900000,
+        "office": 700000,
+        "personal_total": 5834500,
+        "farming": 600000,
+        "deposits": 200000,
+        "real_total": 900000,
+        "machinery": 800000,
+        "acct_rcpt": 300000,
+        "investments": 400000,
+        "others": 1234500,
+        "inventory": 500000
+      },
+      "liabilities": "More than $1 billion",
+      "date_of_last_filing": "06/04/2015",
+      "date_closed": null,
+      "case_naics_code": null,
+      "appeal_case_uuid": null,
+      "party_name": [
+        "RadioShack Corporation (db)"
+      ]
+    }
+  ],
+  "facets": {
+    "date_filed": {
+      "2015": 1,
+      "2014": 1
+    },
+    "assets": {
+      "Unknown": 1,
+      "More than $1 billion": 1
+    },
+    "court": {
+      "debke": 2
+    },
+    "nature_of_suit": [],
+    "liabilities": {
+      "Unknown": 1,
+      "More than $1 billion": 1
+    },
+    "judge_name": {
+      "Brendan Linehan Shannon": 1
+    },
+    "industry": [],
+    "chapter": {
+      "11": 2
+    }
+  },
+  "page_count": 1,
+  "num_found": 2,
+  "num_cases": 2
+}
+```
