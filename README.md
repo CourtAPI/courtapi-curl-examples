@@ -1858,11 +1858,11 @@ Example:
 
 Endpoint: `GET /cases/pacer/search-filings`
 
-Usage: `./pacer/search-business-cases.sh [<date_filed_from>]`
+Usage: `./pacer/search-business-bankruptcies.sh [<date_filed_from>]`
 
 Example:
 ```shell
-$ pacer/search-business-cases.sh 11/10/2014 | jq
+$ pacer/search-bankruptcies-cases.sh 11/10/2014 | jq
 {
   "results": [
     {
