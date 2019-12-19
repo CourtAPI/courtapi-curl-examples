@@ -9,11 +9,11 @@ if [ -z "$COURTAPI_SECRET" ]; then
 fi
 
 if [ -z "$COURTAPI_HOST" ]; then
-  COURTAPI_HOST="courtapi.courtio.dev.azk.io"
+  COURTAPI_HOST="train.v1.courtapi.com"
 fi
 
 if [ -z "$COURTAPI_SCHEME" ]; then
-  COURTAPI_SCHEME="http"
+  COURTAPI_SCHEME="https"
 fi
 
 if [ -z "$COURTAPI_BASE_URL" ]; then

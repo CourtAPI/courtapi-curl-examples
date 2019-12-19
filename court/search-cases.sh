@@ -10,5 +10,5 @@ fi
 court="$1"
 case="$2"
 
-# Lots of possibilities on what to search for.  This just shows cases filed a specific month
+# Lots of possibilities on what to search for. This looks up a case based on the case number.
 curl -s -XPOST $COURTAPI_BASE_URL/courts/pacer/$court/cases/search -d case_no="$case"

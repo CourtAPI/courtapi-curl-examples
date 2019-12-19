@@ -37,7 +37,7 @@ Endpoint: `POST /pacer/credentials`
 Example:
 
 ```shell
-  ./pacer/save-credentials.sh test secret | jq
+  $ ./pacer/save-credentials.sh test secret | jq
   {
     "app_id": "25ed3872",
     "pacer_user": "test"
@@ -1745,7 +1745,7 @@ Usage: `./pacer/search-filings.sh <case_uuid>`
 
 Example:
 ```shell
- $ ./pacer/search-filings.sh nysbke_247775
+ $ ./pacer/search-filings.sh nysbke_247775 | jq
 {
   "facets" => {
     "chapter" => {
